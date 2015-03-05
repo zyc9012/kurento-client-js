@@ -79,16 +79,25 @@ Timeout = function Timeout(id, delay, ontimeout) {
   };
 };
 
+const REPORTS_DIR = 'reports'
+
+function writeReport(ext, data) {
+  console.log('Writing reports');
+
+  var path = REPORTS_DIR + '/' + require('../package.json').name + '.' + ext
+
+  require('fs-extra').outputFileSync(path, data);
+  console.log(ext + ' report saved at ' + path);
+}
+
 QUnit.jUnitReport = function (report) {
+  var ext = 'xml';
+
+  report = report[ext];
+
   // Node.js - write report to file
   if (typeof window === 'undefined') {
-    var path = './junitResult.xml';
-
-    require('fs').writeFile(path, report.xml, function (error) {
-      if (error) return console.error(error);
-
-      console.log('XML report saved at ' + path);
-    });
+    writeReport(ext, report);
   }
 
   // browser - write report to console
