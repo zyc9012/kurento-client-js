@@ -43,7 +43,7 @@
     "kurento-client-core": "Kurento/kurento-client-core-js#master",
     "kurento-client-elements": "Kurento/kurento-client-elements-js#master",
     "kurento-client-filters": "Kurento/kurento-client-filters-js#master",
-    "kurento-jsonrpc": "Kurento/kurento-jsonrpc-js#master",
+    "kurento-jsonrpc": "zyc9012/kurento-jsonrpc-js#master",
     "promisecallback": "0.0.4",
     "reconnect-ws": "zyc9012/reconnect-ws#master",
     "minimist": "^1.2.0"
